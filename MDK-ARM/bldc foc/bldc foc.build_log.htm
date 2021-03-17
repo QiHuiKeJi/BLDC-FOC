@@ -1,0 +1,97 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.33.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: cc 8617859384030, cc, LIC=CZLZX-HRE4K-SBHEJ-U0H7M-PY1SF-7PVI5
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.33.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      Segger\JL2CM3.dll V2.99.38.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+F:\Temp\bldc_foc\MDK-ARM\bldc foc.uvprojx
+Project File Date:  03/07/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'bldc foc'
+compiling main.c...
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf.h(130): warning:  #47-D: incompatible redefinition of macro "VDD_VALUE" 
+  #define  VDD_VALUE                    3300U /*!< Value of VDD in mv */
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf.h(133): warning:  #47-D: incompatible redefinition of macro "PREFETCH_ENABLE" 
+  #define  PREFETCH_ENABLE              1U
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(90): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_0"  (declared at line 75 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_0         0x00000007U /*!< 0 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(92): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_1"  (declared at line 77 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_1         0x00000006U /*!< 1 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(94): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_2"  (declared at line 79 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_2         0x00000005U /*!< 2 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(96): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_3"  (declared at line 81 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_3         0x00000004U /*!< 3 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(98): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_4"  (declared at line 83 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_4         0x00000003U /*!< 4 bits for pre-emption priority
+../Core/Src/main.c: 7 warnings, 0 errors
+compiling stm32f1xx_it.c...
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf.h(130): warning:  #47-D: incompatible redefinition of macro "VDD_VALUE" 
+  #define  VDD_VALUE                    3300U /*!< Value of VDD in mv */
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf.h(133): warning:  #47-D: incompatible redefinition of macro "PREFETCH_ENABLE" 
+  #define  PREFETCH_ENABLE              1U
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(90): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_0"  (declared at line 75 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_0         0x00000007U /*!< 0 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(92): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_1"  (declared at line 77 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_1         0x00000006U /*!< 1 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(94): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_2"  (declared at line 79 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_2         0x00000005U /*!< 2 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(96): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_3"  (declared at line 81 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_3         0x00000004U /*!< 3 bits for pre-emption priority
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h(98): warning:  #47-D: incompatible redefinition of macro "NVIC_PRIORITYGROUP_4"  (declared at line 83 of "../Core/Inc/main.h")
+  #define NVIC_PRIORITYGROUP_4         0x00000003U /*!< 4 bits for pre-emption priority
+../Core/Src/stm32f1xx_it.c: 7 warnings, 0 errors
+linking...
+Program Size: Code=8032 RO-data=2364 RW-data=340 ZI-data=1028  
+FromELF: creating hex file...
+"bldc foc\bldc foc.axf" - 0 Error(s), 14 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+   * Component: DSP Variant: Library Version: 1.8.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.1.0.pack
+                Keil.STM32F1xx_DFP.2.1.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_bldc_foc
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\DSP\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: ARM::CMSIS:DSP:Library:1.8.0
+      Include file:  CMSIS\DSP\Include\arm_math.h
+      Library file:  CMSIS\DSP\Lib\ARM\arm_cortexM3l_math.lib
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>
