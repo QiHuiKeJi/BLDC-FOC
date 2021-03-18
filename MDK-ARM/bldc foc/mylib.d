@@ -19,7 +19,7 @@ bldc foc\mylib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_pwr.h
 bldc foc\mylib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h
 bldc foc\mylib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h
 bldc foc\mylib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h
-bldc foc\mylib.o: C:\Users\Administrator\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\DSP\Include\arm_math.h
+bldc foc\mylib.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\DSP\Include\arm_math.h
 bldc foc\mylib.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 bldc foc\mylib.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 bldc foc\mylib.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h

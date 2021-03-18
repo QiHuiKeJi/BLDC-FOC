@@ -63,12 +63,10 @@ uint32_t vaa,vbb,vcc;
 float error_in_proc, er_mem, angle_mem,integral;
 
 void FOC(float angle, float error_angle, float K_p, float K_d, float K_I, uint32_t dt)
-{
-	HALL_CalcElAngle (&HALL_M1);
+{	
 	
 	theta_elec_degrees = ((angle - angle_init)*Pole_Pairs + 90 ); // 11 - pole pairs (22P). + 90 because at initial position theta = 90  
-	theta = theta_elec_degrees*0.01745329251994329576923690768489 ;//Pi/180; // translating into radians
-	 
+	theta = theta_elec_degrees*0.01745329251994329576923690768489 ;//Pi/180; // translating into radians	 
 	
 	Vd = 0; // !
 	
@@ -92,20 +90,14 @@ void FOC(float angle, float error_angle, float K_p, float K_d, float K_I, uint32
 	}
 	integral = dt*0.000001*error_angle_last+integral;
 	Vq = K_p*error_angle ;//+ ((error_angle - error_angle_last)/(dt*0.000001))*K_d + integral*K_I; //Speed; //
-	error_angle_last = error_angle;
-	
-	
-	
+	error_angle_last = error_angle;	
 	
 	if(Vq < -6) Vq = -6; // 6V = Vdc/2 , voltage limitation
-	if(Vq > 6) Vq = 6;
-	
-	
+	if(Vq > 6) Vq = 6;	
 	
 	Va_1 = arm_cos_f32(theta);//cos(theta         );     
 	Vb_1 = arm_cos_f32(theta - 2.0943951023931954923084289221863);//cos(theta - 2.0943951023931954923084289221863 /* 2*Pi/3 */);
-	Vc_1 = arm_cos_f32(theta + 2.0943951023931954923084289221863);//cos(theta + 2.0943951023931954923084289221863);
-	
+	Vc_1 = arm_cos_f32(theta + 2.0943951023931954923084289221863);//cos(theta + 2.0943951023931954923084289221863);	
 	
 	Va = Va_1 * Vq; // projection calculation of Vq into A phase
 	Vb = Vb_1 * Vq; // projection calculation of Vq into B phase
@@ -122,8 +114,7 @@ void FOC(float angle, float error_angle, float K_p, float K_d, float K_I, uint32
 	
 	vaa = TIM1->CCR1;
 	vbb = TIM1->CCR2;
-	vcc = TIM1->CCR3;
-	
+	vcc = TIM1->CCR3;	
 }
 
 

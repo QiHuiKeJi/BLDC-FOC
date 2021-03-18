@@ -31,8 +31,8 @@ typedef struct
 #define High			0x01
 #define Low				0x00
 #define average		 100
-#define Pole_Pairs 11
-#define Vdc 				12
+#define Pole_Pairs 2
+#define Vdc 				24
 #define Pi 3.1415926535897932384
 #define CALIBRATION 0
 

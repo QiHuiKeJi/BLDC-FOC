@@ -18,7 +18,9 @@
 "bldc foc\stm32f1xx_hal_gpio.o"
 "bldc foc\stm32f1xx_hal_gpio_ex.o"
 "bldc foc\system_stm32f1xx.o"
-"C:\Users\Administrator\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\DSP\Lib\ARM\arm_cortexM3l_math.lib"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\DSP\Lib\ARM\arm_cortexM3l_math.lib"
+"bldc foc\eventrecorder.o"
+"bldc foc\retarget_io.o"
 --library_type=microlib --strict --scatter "bldc foc\bldc foc.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

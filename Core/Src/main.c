@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "hall_speed_pos_fdbk.h"
+#include "eventrecorder.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -28,6 +29,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+
 uint8_t mode;
 float angle, angle_error;
 float des_val;
@@ -64,6 +66,7 @@ uint32_t t1, t2, dt1;
   * @brief  The application entry point.
   * @retval int
   */
+
 uint32_t ccval = 500;
 float da = 0.1;
 int main(void)
@@ -113,6 +116,10 @@ int main(void)
 	NVIC_EnableIRQ(TIM4_IRQn);
 	NVIC_EnableIRQ(TIM1_UP_IRQn);
 	des_val = 360000;
+	
+	/* ???EventRecorder??? */ 
+EventRecorderInitialize(EventRecordAll, 1U); 
+EventRecorderStart();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -136,7 +143,8 @@ int main(void)
 //	if(mode==1) sinus_control_V2(angle_error, 6, 0.001, 0.05);
 //		
 //	if(mode==2)combined_control_V3(angle, angle_error, 6, 0.001, 0.05);
-		
+		EventStopA (0);		
+EventStartA (0);
 
 	led_blink();
     /* USER CODE END WHILE */
@@ -149,9 +157,9 @@ int main(void)
 
 void control_poll(void)
 {
-
-		angle = angle + da;
-		
+	mode = 0;
+//		angle = angle + da;
+		angle = HALL_CalcElAngle(&HALL_M1);
 //	angle = CQ_average_angle();
 //  des_val = ADC_average*360/4095;  
 	angle_error = des_val - angle;	
@@ -165,4 +173,9 @@ void control_poll(void)
 
 }
 
+
+void stdout_putchar(int ch)
+{
+
+}
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
