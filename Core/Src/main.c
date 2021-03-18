@@ -110,8 +110,8 @@ int main(void)
 	LL_TIM_EnableAllOutputs(TIM1);
 	
 	HALL_Init (&HALL_M1);
-
-	
+	NVIC_EnableIRQ(TIM4_IRQn);
+	NVIC_EnableIRQ(TIM1_UP_IRQn);
 	des_val = 360000;
   /* USER CODE END 2 */
 
@@ -124,8 +124,33 @@ int main(void)
 //		if(ccval > PWM_period) ccval = 0;
 //		LL_TIM_OC_SetCompareCH1(TIM1, ccval);
 		
+//		angle = angle + da;
+//		
+////	angle = CQ_average_angle();
+////  des_val = ADC_average*360/4095;  
+//	angle_error = des_val - angle;	
+//	
+
+//	if(mode==0)	FOC(angle, angle_error, 1.1,   0,  0.01,  dt1)	;		
+// 
+//	if(mode==1) sinus_control_V2(angle_error, 6, 0.001, 0.05);
+//		
+//	if(mode==2)combined_control_V3(angle, angle_error, 6, 0.001, 0.05);
+		
+
+	led_blink();
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
+
+
+void control_poll(void)
+{
+
 		angle = angle + da;
-		t1 = TIM2->CNT;
 		
 //	angle = CQ_average_angle();
 //  des_val = ADC_average*360/4095;  
@@ -137,17 +162,7 @@ int main(void)
 	if(mode==1) sinus_control_V2(angle_error, 6, 0.001, 0.05);
 		
 	if(mode==2)combined_control_V3(angle, angle_error, 6, 0.001, 0.05);
-		
-	t2 = TIM2->CNT;
-	dt1 = t2 - t1;
-		led_blink();
-    /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
 }
-
-
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
